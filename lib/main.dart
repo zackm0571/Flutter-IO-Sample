@@ -41,6 +41,9 @@ class MyHomePage extends StatefulWidget {
 
   @override
   _MyHomePageState createState() => new _MyHomePageState();
+
+
+
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -50,6 +53,15 @@ class _MyHomePageState extends State<MyHomePage> {
   _MyHomePageState(){
     albumManager = new AlbumManager();
   }
+
+
+  @override
+  void initState() {
+    setState((){
+
+    });
+  }
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -59,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
     });
   }
+
 
   void _onPrevClick(){
     setState((){
@@ -119,14 +132,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
               ])),
 
-              new Container(
+              new Expanded(
                 child:
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children:
                   <Widget>[
-                      new Container(child:new FloatingActionButton(onPressed: _onNextClick), alignment:Alignment.bottomLeft),
-                      new Container(child:new FloatingActionButton(onPressed: _onPrevClick), alignment:Alignment.bottomRight),
+                      new Container(child:new FloatingActionButton(onPressed: _onPrevClick), alignment:Alignment.bottomLeft),
+                      new Container(child:new FloatingActionButton(onPressed: _onNextClick), alignment:Alignment.bottomRight),
                   ],)
               )
 
