@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: new Column(children: [
           new Container(
-              margin: const EdgeInsets.all(10.0), child: new Text('$title'), alignment: Alignment.topCenter,),
+              margin: const EdgeInsets.all(10.0), child: new Text('$artist',textScaleFactor: 2.0,), alignment: Alignment.topCenter,),
           new Center(
               // Center is a layout widget. It takes a single child and positions it
               // in the middle of the parent.
@@ -132,10 +132,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   new Image.network(
                   '$albumArtUrl',
                   ),
-                  new Text(
-                    '$artist',
+                  new Container(
+                    child:
+                        new Text(
+                          '$title',
+                          textScaleFactor: 2.0,
+                        ),
+                    margin:EdgeInsets.all(10.0),
                   ),
-
               ])),
 
               new Expanded(
@@ -144,8 +148,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children:
                   <Widget>[
-                      new Container(margin: const EdgeInsets.all(20.0), child:new FloatingActionButton(onPressed: _onPrevClick), alignment:Alignment.bottomLeft),
-                      new Container(margin: const EdgeInsets.all(20.0), child:new FloatingActionButton(onPressed: _onNextClick), alignment:Alignment.bottomRight),
+                      new Container(margin: const EdgeInsets.all(20.0), child:new RaisedButton( onPressed: albumManager.hasPrev() ? _onPrevClick : null, color:ThemeData.dark().buttonColor, child: new Text("Prev"), ), alignment:Alignment.bottomLeft),
+                      new Container(margin: const EdgeInsets.all(20.0), child:new RaisedButton( onPressed: albumManager.hasNext() ? _onNextClick : null, color:ThemeData.dark().buttonColor, child: new Text("Next"),), alignment:Alignment.bottomRight),
                   ],)
               )
 
