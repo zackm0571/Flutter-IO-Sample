@@ -11,11 +11,13 @@ class AlbumManager{
       Album tmp = new Album();
       tmp.artist = "Silent Planet";
       tmp.title="The Night God Slept";
+      tmp.album_art_url="https://i.ytimg.com/vi/c1j5_WO1ju0/maxresdefault.jpg";
       albums.add(tmp);
 
       tmp = new Album();
       tmp.artist = "System of a Down";
       tmp.title="Toxicity";
+      tmp.album_art_url="http://www.onlinedrummer.com/wp-content/uploads/2015/04/Toxicity-System-of-a-Down.jpg";
       albums.add(tmp);
     }
   }

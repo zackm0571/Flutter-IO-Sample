@@ -97,6 +97,8 @@ class _MyHomePageState extends State<MyHomePage> {
     Album currentAlbum = albumManager.getCurrent();
     String title = currentAlbum.title;
     String artist = currentAlbum.artist;
+    String albumArtUrl = currentAlbum.album_art_url;
+
     return new Scaffold(
         appBar: new AppBar(
           // Here we take the value from the MyHomePage object that was created by
@@ -126,9 +128,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   // horizontal).
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                new Text(
-                  '$artist',
-                ),
+
+                  new Image.network(
+                  '$albumArtUrl',
+                  ),
+                  new Text(
+                    '$artist',
+                  ),
 
               ])),
 

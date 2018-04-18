@@ -1,3 +1,3 @@
 class Album{
-  String title, artist;
+  String title, artist, album_art_url;
 }
