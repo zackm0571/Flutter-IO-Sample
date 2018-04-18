@@ -135,11 +135,11 @@ class _MyHomePageState extends State<MyHomePage> {
               new Expanded(
                 child:
                 new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children:
                   <Widget>[
-                      new Container(child:new FloatingActionButton(onPressed: _onPrevClick), alignment:Alignment.bottomLeft),
-                      new Container(child:new FloatingActionButton(onPressed: _onNextClick), alignment:Alignment.bottomRight),
+                      new Container(margin: const EdgeInsets.all(20.0), child:new FloatingActionButton(onPressed: _onPrevClick), alignment:Alignment.bottomLeft),
+                      new Container(margin: const EdgeInsets.all(20.0), child:new FloatingActionButton(onPressed: _onNextClick), alignment:Alignment.bottomRight),
                   ],)
               )
 
